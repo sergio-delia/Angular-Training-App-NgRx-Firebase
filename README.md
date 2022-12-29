@@ -1,4 +1,4 @@
-# CorsoUdemyVersion
+# Angular Training App by Sergio D'Elia
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
