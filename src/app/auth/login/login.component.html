@@ -1,0 +1,17 @@
+<section class="login-form">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGab="10px" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field hintLabel="Deve essere una mail valida.">
+      <input type="email" matInput placeholder="Your email" name="email" email required formControlName="email">
+      <!-- <mat-hint>Deve essere una mail valida</mat-hint> -->
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Almeno 6 caratteri.">
+      <input  type="password" matInput placeholder="Your password" ngModel name="password" required minlength="6" formControlName="password">
+      <mat-error>Password non valida</mat-error>
+    </mat-form-field>
+
+    <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+    <mat-spinner *ngIf="(isLoading$ | async)"></mat-spinner>
+  </form>
+</section>
